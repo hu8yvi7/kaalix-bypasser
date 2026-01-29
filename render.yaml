@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: kaalix-bypasser
+    env: python
+    region: singapore  # or ap-south-1 (Mumbai)
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    plan: free  # or starter/basic for paid plan
